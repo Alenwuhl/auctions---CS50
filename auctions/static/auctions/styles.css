@@ -14,7 +14,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    justify-content: center;  /* Centra los elementos si no llenan el ancho */
+    justify-content: center;  
 }
 
 .listing-item {
@@ -26,8 +26,8 @@ h2 {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 400px; /* Establece un ancho máximo para cada tarjeta */
-    margin: 0 auto; /* Centra cada tarjeta cuando es única */
+    max-width: 400px; 
+    margin: 0 auto; 
 }
 
 .listing-item:hover {
@@ -82,7 +82,7 @@ h2 {
     color: #aaa;
 }
 
-/* Botones */
+
 .btn {
     margin-top: 15px;
     padding: 10px 15px;
@@ -102,7 +102,7 @@ h2 {
     color: #fff;
 }
 
-/* Sección de formularios */
+
 .watchlist-form,
 .bid-form,
 .close-auction-form,
@@ -123,7 +123,7 @@ h2 {
     border: 1px solid #ccc;
 }
 
-/* Paginación */
+
 .pagination {
     margin-top: 20px;
     display: flex;
@@ -154,7 +154,7 @@ h2 {
     color: #333;
 }
 
-/* Comentarios */
+
 .comments-section {
     margin-top: 40px;
 }

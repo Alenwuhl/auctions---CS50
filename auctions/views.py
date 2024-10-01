@@ -161,7 +161,7 @@ def close_auction(request, listing_id):
     if request.user != listing.creator:
         return redirect("listing", listing_id=listing.id)
 
-    listing.active = False  # Cambiado de is_active a active
+    listing.active = False  
     highest_bid = Bid.objects.filter(listing=listing).order_by("-amount").first()
     if highest_bid:
         listing.winner = highest_bid.user
@@ -194,7 +194,7 @@ def listing(request, listing_id):
 
         elif "place_bid" in request.POST:
             bid_amount = float(request.POST["bid"])
-            if bid_amount > min_bid:  # Estrictamente mayor
+            if bid_amount > min_bid:  
                 bid = Bid(user=request.user, listing=listing, amount=bid_amount)
                 bid.save()
                 listing.current_bid = bid.amount
