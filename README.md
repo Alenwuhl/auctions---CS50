@@ -62,7 +62,7 @@ This project is an e-commerce auction website, designed as part of the CS50 Web 
 
 A demo of this project is available on YouTube:
 
-YouTube Demo Link
+[YouTube Demo Link](https://youtu.be/9gGeC2le38k)
 
 ## Notes
 
