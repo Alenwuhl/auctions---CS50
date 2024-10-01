@@ -1,0 +1,50 @@
+{% extends "auctions/layout.html" %} {% block body %}
+<h2>Listings in {{ category }}</h2>
+{% if page_obj.object_list %}
+<div class="listings-container">
+  {% for listing in page_obj %}
+  <div class="listing-item">
+    <div class="listing-image">
+      {% if listing.image_url %}
+      <img
+        src="{{ listing.image_url }}"
+        alt="{{ listing.title }}"
+        class="img-fluid"
+      />
+      {% else %}
+      <img
+        src="/static/auctions/default-image.jpg"
+        alt="No Image Available"
+        class="img-fluid"
+      />
+      {% endif %}
+    </div>
+    <div class="listing-details">
+      <h3>{{ listing.title }}</h3>
+      <p><strong>Current Price:</strong> ${{ listing.current_price }}</p>
+      <p>{{ listing.description }}</p>
+      <a href="{% url 'listing' listing.id %}" class="btn btn-primary"
+        >View Details</a
+      >
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<div class="pagination">
+  <span class="step-links">
+    {% if page_obj.has_previous %}
+    <a href="?page=1">&laquo; first</a>
+    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+    {% endif %}
+    <span class="current"
+      >Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</span
+    >
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">next</a>
+    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+    {% endif %}
+  </span>
+</div>
+{% else %}
+<p>No active listings in this category.</p>
+{% endif %} {% endblock %}
